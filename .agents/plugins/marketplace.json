@@ -1,0 +1,14 @@
+{
+  "name": "minicut",
+  "plugins": [
+    {
+      "name": "minicut",
+      "source": "./",
+      "description": "Make AI short dramas from Codex: MiniCut writes the script, plans every shot, makes the video and edits the episode. Plus MiniAPI, one key for Seedance 2.5, Kling 3.0 and other video, image and voice models.",
+      "category": "media",
+      "policy": {
+        "installation": "AVAILABLE"
+      }
+    }
+  ]
+}
