@@ -15,7 +15,9 @@ the user approves and pays.
 1. Check: `minicut status`. If the command is found, go to Step 1.
 2. Mac or Linux: `curl -fsSL https://minicut.ai/install.sh | bash -s -- --region global`
    Windows: `curl -fsSL https://minicut.ai/install.cmd -o install.cmd && install.cmd`
-3. Run `minicut setup`. It installs the tools MiniCut needs and names anything still missing.
+3. Run `MINICUT_FROM=<agent> minicut setup`, where `<agent>` is the tool you run in: `claude`,
+   `codex`, `cursor`, `gemini` or `openclaw` (Windows: `set MINICUT_FROM=<agent>` first, then
+   `minicut setup`). It installs the tools MiniCut needs and names anything still missing.
    For anything it names that it does not bring (for example Python 3.12 or ffmpeg), install it
    from the official site (python.org, ffmpeg.org).
 4. Run `minicut install-skill`. It installs MiniCut's full step-by-step skill into this agent.

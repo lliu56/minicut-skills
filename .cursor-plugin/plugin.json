@@ -1,0 +1,20 @@
+{
+  "name": "minicut",
+  "description": "Make AI short dramas from Cursor: MiniCut writes the script, plans every shot, makes the video and edits the episode. Plus MiniAPI, one key for Seedance 2.5, Kling 3.0 and other video, image and voice models.",
+  "version": "0.1.3",
+  "author": {
+    "name": "MiniCut"
+  },
+  "homepage": "https://www.minicut.ai",
+  "repository": "https://github.com/lliu56/minicut-skills",
+  "license": "MIT",
+  "keywords": [
+    "ai video",
+    "video generation",
+    "short drama",
+    "ai film",
+    "seedance",
+    "kling"
+  ],
+  "skills": "./skills/"
+}

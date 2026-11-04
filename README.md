@@ -23,6 +23,32 @@ codex plugin marketplace add lliu56/minicut-skills
 codex plugin add minicut@minicut
 ```
 
+Cursor: the plugin manifest is in `.cursor-plugin/plugin.json`.
+
+Gemini CLI:
+
+```
+gemini extensions install https://github.com/lliu56/minicut-skills
+```
+
+## MCP server
+
+`@minicut/mcp` lets any MCP client check setup, start a project and get the next step. Source in [`mcp/`](mcp/).
+
+```
+claude mcp add minicut -- npx -y @minicut/mcp
+```
+
+## CLI
+
+Mac or Linux:
+
+```
+curl -fsSL https://minicut.ai/install.sh | bash -s -- --region global
+```
+
+Windows: see https://minicut.ai/install
+
 Seedance 2.5 on MiniAPI: $0.16 / s at 480p, $0.35 / s at 720p. A job that fails is not charged.
 Prices for every model: https://api.minicut.ai/pricing
 
