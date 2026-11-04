@@ -3,6 +3,8 @@
 // computer and returns its output. Only free commands are exposed: paid steps stay
 // in the CLI, which prints the price and waits for the user's yes.
 import { execFile } from "node:child_process";
+import { accessSync, constants } from "node:fs";
+import { delimiter, isAbsolute, join } from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -11,12 +13,25 @@ const INSTALL_HINT =
   "The MiniCut CLI is not installed. Install it (Mac or Linux) with " +
   "`curl -fsSL https://minicut.ai/install.sh | bash -s -- --region global`, then run the minicut_setup tool. Docs: https://www.minicut.ai";
 
+// Find `minicut` on PATH once at startup, so a file of the same name inside a
+// project folder can never run in its place.
+function findMinicut() {
+  for (const d of (process.env.PATH || "").split(delimiter)) {
+    if (!d || !isAbsolute(d)) continue;
+    const p = join(d, "minicut");
+    try { accessSync(p, constants.X_OK); return p; } catch {}
+  }
+  return null;
+}
+const MINICUT = findMinicut();
+
 function run(args, cwd) {
+  if (!MINICUT) return Promise.resolve({ content: [{ type: "text", text: INSTALL_HINT }], isError: true });
   const env = { ...process.env };
   if (!env.MINICUT_FROM) env.MINICUT_FROM = "mcp";
   return new Promise((resolve) => {
     execFile(
-      "minicut",
+      MINICUT,
       args,
       { cwd: cwd || process.cwd(), timeout: 120_000, maxBuffer: 4 * 1024 * 1024, env },
       (err, stdout, stderr) => {
@@ -48,7 +63,7 @@ server.registerTool(
 
 server.registerTool(
   "minicut_setup",
-  { title: "MiniCut setup", description: "Install the tools MiniCut needs on this computer. Free.", inputSchema: {} },
+  { title: "MiniCut setup", description: "Install the tools MiniCut needs on this computer. Free. Ask the user before running it, because it installs software.", inputSchema: {} },
   () => run(["setup"]),
 );
 
