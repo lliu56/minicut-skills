@@ -22,6 +22,7 @@
     "displayName": "MiniCut",
     "shortDescription": "Make AI short films and run video models from Codex",
     "category": "media",
-    "websiteURL": "https://www.minicut.ai"
+    "websiteURL": "https://www.minicut.ai",
+    "composerIcon": "./assets/icon.png"
   }
 }
