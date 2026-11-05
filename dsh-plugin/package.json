@@ -1,0 +1,40 @@
+{
+  "name": "@minicut/dsh-plugin",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "engines": { "node": "^22.19.0 || >=24.0.0", "dsh": ">=0.2.1-rc.3" },
+  "description": "MiniCut for DeepSeek Harness: make multi-shot AI short films with the MiniCut CLI, with a price shown before every paid job.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "minicut",
+    "ai-video",
+    "video-generation",
+    "short-film"
+  ],
+  "homepage": "https://github.com/lliu56/minicut-skills/tree/main/dsh-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lliu56/minicut-skills.git",
+    "directory": "dsh-plugin"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
