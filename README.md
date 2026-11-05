@@ -52,4 +52,8 @@ Windows: see https://minicut.ai/install
 Seedance 2.5 on MiniAPI: $0.16 / s at 480p, $0.35 / s at 720p. A job that fails is not charged.
 Prices for every model: https://api.minicut.ai/pricing
 
+## Data
+
+`minicut-film-studio` and the MiniCut CLI send your prompts and uploads to minicut.ai to make your video. `miniapi-video` sends requests to api.minicut.ai. Privacy policy: https://www.minicut.ai/legal/privacy
+
 MIT license.
