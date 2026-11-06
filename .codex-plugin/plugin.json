@@ -23,6 +23,19 @@
     "shortDescription": "Make AI short films and run video models from Codex",
     "category": "media",
     "websiteURL": "https://www.minicut.ai",
-    "composerIcon": "./assets/icon.png"
+    "composerIcon": "./assets/icon.png",
+    "longDescription": "Make a multi-shot AI short film from an idea inside Codex. The minicut-film-studio skill installs the MiniCut CLI, which writes the story, plans every shot, makes character and location pictures, video takes, voice lines and music, and edits the cut, with a check after every step. The miniapi-video skill runs Seedance, Kling, Wan and other video, image and voice models on one MiniAPI key. Every paid job prints its price and waits for a yes.",
+    "developerName": "MiniCut",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "privacyPolicyURL": "https://www.minicut.ai/legal/privacy",
+    "termsOfServiceURL": "https://www.minicut.ai/legal/terms",
+    "logo": "./assets/icon.png",
+    "screenshots": [
+      "./assets/screenshot-models.jpg"
+    ]
   }
 }

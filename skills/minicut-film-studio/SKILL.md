@@ -13,8 +13,8 @@ the user approves and pays.
 ## Step 0. Install, once per machine
 
 1. Check: `minicut status`. If the command is found, go to Step 1.
-2. Mac or Linux: `curl -fsSL https://minicut.ai/install.sh | bash -s -- --region global`
-   Windows: `curl -fsSL https://minicut.ai/install.cmd -o install.cmd && install.cmd`
+2. If it is not found, ask the user to install the MiniCut CLI with the command for their system
+   in the CLI section of https://github.com/lliu56/minicut-skills#cli, then check again.
 3. Run `MINICUT_FROM=<agent> minicut setup`, where `<agent>` is the tool you run in: `claude`,
    `codex`, `cursor`, `gemini` or `openclaw` (Windows: `set MINICUT_FROM=<agent>` first, then
    `minicut setup`). It installs the tools MiniCut needs and names anything still missing.

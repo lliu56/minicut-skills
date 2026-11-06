@@ -47,7 +47,11 @@ Mac or Linux:
 curl -fsSL https://minicut.ai/install.sh | bash -s -- --region global
 ```
 
-Windows: see https://minicut.ai/install
+Windows:
+
+```
+curl -fsSL https://minicut.ai/install.cmd -o install.cmd && install.cmd
+```
 
 Seedance 2.5 on MiniAPI: $0.16 / s at 480p, $0.35 / s at 720p. A job that fails is not charged.
 Prices for every model: https://api.minicut.ai/pricing
