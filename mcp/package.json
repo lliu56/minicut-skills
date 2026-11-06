@@ -13,6 +13,6 @@
   "keywords": ["mcp", "mcp-server", "minicut", "ai video", "short drama", "ai film"],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "zod": "^3.25.0"
+    "zod": "^4.6.7"
   }
 }
